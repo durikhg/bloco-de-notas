@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="bloco de notas">
+    <meta name="description" content="Bloco de notas online">
+    <meta name="author" content="Luiz Eduardo">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a89aa029c3.js" crossorigin="anonymous"></script>
+    <title>Dados</title>
+</head>
+<body>
+    <header>
+        <h1>Bloco de notas</h1>
+    </header>
+    <main>
+        <form id="formDados" onsubmit="return salva()">
+            <label for="titulo">Título:</label>
+            <input id="titulo" type="text" placeholder="Título da nota" required>
+            
+            <label for="texto">Texto:</label>
+            <textarea id="texto" placeholder="Escreva sua nota"></textarea>
+
+            <button type="submit" class="btn-salvar"><i class="fa-solid fa-check"></i> Salvar</button>   
+        </form>
+        
+        <div class="btn-container-wrapper">
+            <div class="btn-container" id="btnContainer"></div>
+        </div>
+
+        <section id="resultado">
+            <h2 id="dados1"></h2>
+            <p id="dados"></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Luiz Eduardo</p>
+    </footer>
+    
+    <script>
+        let notas = JSON.parse(localStorage.getItem('notas')) || [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            atualizaBotoes();
+        });
+
+        function salva() {
+            let titulo = document.getElementById("titulo").value;
+            let texto = document.getElementById("texto").value;
+            
+            let nota = {
+                titulo: titulo,
+                texto: texto,
+            };
+
+            notas.push(nota);
+            localStorage.setItem('notas', JSON.stringify(notas));
+            atualizaBotoes();
+
+            document.getElementById("formDados").reset(); 
+            return false;
+        }
+
+        function atualizaBotoes() {
+            let container = document.getElementById("btnContainer");
+            container.innerHTML = ""; 
+
+            notas.forEach((nota, index) => {
+                let button = document.createElement("button");
+                button.type = "button";
+                button.innerText = nota.titulo;
+                button.onclick = () => exibeDados(index);
+                container.appendChild(button);
+            });
+        }
+
+        function exibeDados(index) {
+            let nota = notas[index];
+            document.getElementById("dados").innerHTML = nota.texto;
+            document.getElementById("dados1").innerHTML = nota.titulo;
+        }
+
+    </script>
+</body>
+</html>
+

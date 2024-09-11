@@ -1,0 +1,201 @@
+
+/* Estilo do cabeçalho */
+header {
+    background: linear-gradient(45deg, #FF00FF, #FF0000); /* Gradiente roxo e vermelho */
+    color: #FFFFFF;
+    padding: 20px;
+    border-bottom: 5px solid #FF0000;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 2.5em;
+    animation: textFlash 2s infinite alternate;
+}
+
+/* Estilo dos títulos */
+h1 {
+    color: #FF0000; /* Vermelho vibrante */
+    text-shadow: 2px 2px #000000;
+    animation: textFlash 2s infinite alternate;
+}
+
+/* Estilo dos rótulos */
+label {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/* Estilo dos campos de formulário, botões e seletores */
+select, input, button {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    border: 5px solid #FFD700; /* Amarelo ouro */
+    background-color: #FF69B4; /* Rosa chamativo */
+    color: #FFFFFF;
+    text-shadow: 1px 1px #000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: buttonMove 5s infinite alternate;
+}
+
+/* Estilo das tabelas */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #FFFACD; /* Cor de fundo amarelo suave */
+    border: 5px dashed #0000FF; /* Bordas azuis vibrantes */
+    animation: tableGlow 3s infinite alternate;
+}
+
+/* Estilo das células de tabelas */
+th, td {
+    border: 3px solid #000000; /* Bordas grossas em preto */
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Estilo das cabeçalhos de tabela */
+th {
+    background-color: #FF4500; /* Fundo laranja chamativo */
+    color: #FFFFFF;
+}
+
+/* Estilo das células de dados */
+td {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Animações clássicas dos anos 2000 */
+@keyframes bodyFlash {
+    0% { background-color: #00FF00; }
+    100% { background-color: #FF00FF; }
+}
+
+@keyframes textFlash {
+    0% { color: #FF0000; }
+    100% { color: #FFFF00; }
+}
+
+@keyframes buttonMove {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+}
+
+@keyframes tableGlow {
+    0% { box-shadow: 0 0 10px #00FFFF; }
+    100% { box-shadow: 0 0 20px #FF00FF; }
+}
+
+body {
+    background-color: #00FF00; /* Verde chamativo de fundo */
+    color: #0000FF; /* Texto azul vibrante */
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input do título */
+#titulo {
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+}
+
+/* Caixa de texto maior para o conteúdo */
+#texto {
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Botão salvar */
+button {
+    background-color: #FF69B4;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Contêiner de botões com rolagem */
+.btn-container-wrapper {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.btn-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.btn-container button {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+/* Botões de seta */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FF69B4;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+/* Estilo da exibição de notas */
+#resultado {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título centralizado */
+#dados1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Caixa de texto em quadrado */
+#dados {
+    border: 2px solid #0000FF;
+    padding: 20px;
+    width: 300px;
+    height: auto;
+    text-align: justify;
+    background-color: #FFFFFF;
+}
